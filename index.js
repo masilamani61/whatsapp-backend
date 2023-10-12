@@ -10,6 +10,7 @@ require('dotenv').config()
 const port=process.env.port
 const MONGOURL=process.env.mongourl
 app.use(express.json())
+app.use(cors())
 app.use(cors({'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'authorization','Access-Control-Allow-Methods':'GET,POST,PUT,DELETE'}))
 app.use('/api/auth',authRoute)
 app.use('/api/friendinvitation',frndinvitationRoute)
